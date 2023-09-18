@@ -1,3 +1,11 @@
+# Markdown语法
+[TOC] 
+<!--啊哈这里是注释  只要使用这个语法就可以自动生成目录---->
+oi wiki  
+github
+代码随想录
+hello算法
+系统去学习这些
 # 一级标题
 
 ## 二级标题
@@ -72,11 +80,14 @@ print("Hello, World!")
 
 ---
 
+==标记==
+下标  H~2~0  
+
 注释:
 
 <!-- 你看不见我 -->
 
-# 关于LaTeX  
+# LaTeX用法  
 吸纳了大部分LaTeX语法   
 
 写一点技术心得数学建模   
@@ -92,5 +103,11 @@ $$
 
    $x^2$
 3. 展示型分式$\displaystyle\frac{x}{y}$  
-4. 
+4. LaTeX Markdown calculator  快捷键计算数学公式 shift+Ctrl+alt+E
+5. 
 
+# github
+还是说……有朝一日会整一个github page静态网站托管服务 （分布式 即为多个节点的交互
+
+---
+# geogebra画立体  几何画板画平面
