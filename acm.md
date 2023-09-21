@@ -13,14 +13,14 @@
 ---
 ## 字符串
 简称为串
+C++ 标准库操作字符串对象，同时也提供对字符数组的兼容。
+字符数组就是c风格字符串
 ### 比较
 取决于字符编码
 字符串之间的大小取决于它们按顺序排列字符的前后顺序
 ==所以对于[剑指offer 把数组排为最小的数](https://leetcode.cn/problems/ba-shu-zu-pai-cheng-zui-xiao-de-shu-lcof/)这种排序题 大可以全部转化到字符串去整==
 >字符和整型是通用哒 转化 ch=
->
->
->
+
 
 ### strcmp
 该函数返回值如下：
@@ -124,7 +124,7 @@ insert(0, 7)：在索引0插入元素7
 设栈S和队列Q的初始状态为空，元素a、b、c、d、e、f依次通过栈S，一个元素出栈后即进入队列Q，若这6个元素出队列的顺序是b、d、c、f、e、a则栈S的容量至少应该是3
 ## 基于deque实现的queue   
 先入先出   
-## 二叉树
+## 树
 ~~~
 /* 二叉树节点结构体 */
 struct TreeNode {
@@ -135,7 +135,8 @@ struct TreeNode {
 };
 
 ~~~
-### 数组表示
+顺序存储：补为完全二叉树
+链式存储：双向链表
 ## 堆 
 逻辑结构就是一颗完全二叉树 大顶堆 小顶堆
 最底层节点靠左填充，其他层的节点都被填满。
@@ -155,77 +156,6 @@ struct TreeNode {
 
 
 
----
-# 算法
-## 遍历
-### 关于迭代器for循环三种
-~~~
-vector<Point> points;
-printf("通过迭代器访问\n");
-    vector<Point>::iterator iter;
-    for (iter = points.begin(); iter != points.end(); iter++) {
-
-    }
-~~~
-为什么你会忘记while也是循环  while循环是范围循环
-for循环是条件循环 但是auto for 也是基于范围的循环吧
-## 排序
-学完排序就去翻新生赛玩
-算法思想的本身是独立于编程语言的
-稳定与不稳定的排序算法 通俗地讲就是能保证排序前两个相等的数其在序列的前后位置顺序和排序后它们两个的前后位置顺序相同。*在简单形式化一下*，如果Ai = Aj，Ai原来在位置前，排序后Ai还是要在Aj位置前。
-算法就像轮子
-多学一个算法就多一个脑子
-### 冒泡排序
-~~~
- 所有的数组 起手都应该是一句
-n=len(nums)-1
- py的range不算最后一位的吧
-for i in range(n-1):
-  对数组未排序区间 [0, n - i - 1] 的元素执行「冒泡」
-    for j in range(n-i-1)：
-        if():
-            nums[j], nums[j + 1] = nums[j + 1], nums[j]
-            
-~~~
-效率优化之flag 标志的储存
 
 
-### 快排
-交换类的排序包含冒泡和快排
-快排是分治思想？有基准划分即可称为分治
-为什么要把所有排序都学掉aaa 快排比较重要 确信
-~~~
-/* 元素交换 在一个数组中交换下标为i和j的两个元素 明确你输入的是什么东西*/
-void swap(vector<int> &nums, int i, int j) {
-    int tmp = nums[i];
-    nums[i] = nums[j];
-    nums[j] = tmp;
-}
-
-/* 哨兵划分 
-然鹅这里实际上是个函数咧 所以在代码块中使用的时候记得把left改成0 right改成n*/
-int partition(vector<int> &nums, int left, int right) {
-    // 以 nums[left] 作为基准数
-    int i = left, j = right;
-    //看清楚这里是逗号
-    while (i < j) {
-        while (i < j && nums[j] >= nums[left])
-            j--; // 从右向左找首个小于基准数的元素
-        while (i < j && nums[i] <= nums[left])
-            i++;          // 从左向右找首个大于基准数的元素
-        swap(nums, i, j); // 交换这两个元素
-    }
-    //到这一步的时候i=j所以这里用哪个其实不重要
-    swap(nums, i, left); // 将基准数交换至两子数组的分界线
-    return i;            // 返回基准数的索引
-}
-~~~
-### 桶排序
-### 选择排序
-不用一趟一趟跑了
-## 哈希
-*最致命的一集`hash[nums[i]]++; `里面好歹得用到nums啊
-*有负数怎么用哈希啊啊啊 nums[i]可以为负数的说救命
-细节与优化
-*与众数有关系的摩尔投票
 # 力扣刷题报错笔记救
