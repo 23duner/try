@@ -21,7 +21,16 @@ C++ 标准库操作字符串对象，同时也提供对字符数组的兼容。
 ==所以对于[剑指offer 把数组排为最小的数](https://leetcode.cn/problems/ba-shu-zu-pai-cheng-zui-xiao-de-shu-lcof/)这种排序题 大可以全部转化到字符串去整==
 >字符和整型是通用哒 转化 ch=
 
+字符串相关API
+省去空格并且全部整成小写
+~~~
+for (char ch: s) {
+            if (isalnum(ch)) {
+                sgood += tolower(ch);
+            }
+        }
 
+~~~
 ### strcmp
 该函数返回值如下：
 
